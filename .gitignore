@@ -25,7 +25,7 @@ test-output
 _Resharper.*/
 bin/
 obj/
-.node_modules/
+**/node_modules/
 dist
 .dist/
 .tmp
