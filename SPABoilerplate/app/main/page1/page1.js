@@ -11,8 +11,8 @@
                 .state('main.page1.list', {
                     url: '/list',
                     templateUrl: 'app/main/page1/list/list.html',
-                    controller: function($scope) {
-                        $scope.items = ["A", "1", "items", "apple"];
+                    controller: function($scope, DataService) {
+                        $scope.items = DataService.query();
                     }
                 });
         }])

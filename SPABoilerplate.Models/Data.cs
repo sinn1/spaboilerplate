@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SPABoilerplate.Models
 {
-    public class Class1
+    public class Data
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

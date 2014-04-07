@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -120,11 +123,18 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Compile Include="Config\FilterConfig.cs" />
+    <Compile Include="Config\Module.cs" />
+    <Compile Include="Config\Ninject\Kernel.cs" />
+    <Compile Include="Config\Ninject\NinjectResolver.cs" />
+    <Compile Include="Config\Ninject\NinjectScope.cs" />
     <Compile Include="Config\WebApiConfig.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Database\EntityFrameworks\EfContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ErrorResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +159,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <ProjectReference Include="..\SPABoilerplate.DAL\SPABoilerplate.DAL.csproj">
+      <Project>{79627CEC-C974-4538-8295-1A3B690E3AAB}</Project>
+      <Name>SPABoilerplate.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPABoilerplate.Models\SPABoilerplate.Models.csproj">
+      <Project>{81871F17-7A98-4448-B63F-3DC0C50F31B9}</Project>
+      <Name>SPABoilerplate.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -179,9 +196,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>52449</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56181/</IISUrl>
+          <IISUrl>http://localhost:56199/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
