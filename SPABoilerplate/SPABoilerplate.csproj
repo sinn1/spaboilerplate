@@ -147,6 +147,7 @@
     <Content Include="app\main\page1\page1.html" />
     <Content Include="app\main\page1\page1.js" />
     <Content Include="app\services\dataService.js" />
+    <Content Include="app\vendor\ui-bootstrap\ui-bootstrap-tpls-0.10.0.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />

@@ -1,5 +1,6 @@
 ﻿var app = angular.module('spaBoilerplate', [
     "ngResource",
+    "ui.bootstrap",
     "ui.router"
 ]);
 
